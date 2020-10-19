@@ -1,2 +1,4 @@
 node_modules
 /index.1.html/*
+.DS_store
+img/.DS_store
