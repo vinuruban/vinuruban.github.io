@@ -11,6 +11,33 @@
   <title>Vinu's Website</title>
   <link rel="shortcut icon" type="image/png" href="img/favi/favicon.png">
 
+  <script>
+    var i = 0;
+    var ii = 0;
+    var txt = 'Hello World, I\'m';
+    var nextTxt = 'Vinukshen';
+    var speed = 70;
+    var nextSpeed = 70;
+
+    function typeTitle() {
+      if (i < txt.length) {
+        document.getElementById("loadText").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeTitle, speed);
+      } else {
+        typeName();
+      }
+    }
+
+    function typeName() {
+      if (ii < nextTxt.length) {
+        document.getElementById("loadNextText").innerHTML += nextTxt.charAt(ii);
+        ii++;
+        setTimeout(typeName, nextSpeed);
+      }
+    }
+  </script>
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,7 +53,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="typeTitle();">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -63,9 +90,8 @@
   <header class="masthead">
     <div class="container">
       <div class="intro-text">
-        <div class="intro-lead-in">Hello World, I'm</div>
-        <!-- <h2 class="font-weight-light mb-0">Web Developer - Graphic Artist - User Experience Designer</h2> -->
-        <div class="intro-heading text-uppercase">Vinukshen</div>
+        <div class="intro-lead-in" id="loadText">&#8205;</div>
+        <div class="intro-heading text-uppercase" id="loadNextText">&#8205;</div>
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#caro">View Photos</a>
       </div>
     </div>
